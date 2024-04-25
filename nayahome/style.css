@@ -1,0 +1,501 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+:root{
+    --dark-color: #0F172B;
+    --bright-color: #fff;
+    --pink-color: #cb3488;
+    --yellow-color:#ffff00;
+    --light-pink: #ffb6c1;
+}
+
+header{
+    background-color: var(--dark-color);
+    color: var(--bright-color);
+
+    .navbar{
+        background: transparent;
+        transition: all .45s ease;
+
+        .container-fluid{
+
+            .navbar-brand{
+
+                .logo{
+                    width: 100px;
+                    animation: imgRotate 50s linear infinite;
+
+                }
+            }
+            h3{
+                font-family: 'Pacifico', cursive;
+
+                span{
+                    color: var(--pink-color);
+                    font-family: 'Pacifico', cursive;
+                }
+
+            }
+
+            .navbar-collapse{
+
+                .navbar-nav{
+
+                    .nav-item{
+                        
+
+                        .nav-link{
+                            font-family: 'Courier New', Courier, monospace;
+                            position: relative;
+                            font-size: 1.7rem;
+                            padding-right: 41px;
+                            font-weight: 600;
+                            
+                        }
+                        .nav-link:hover{
+                            border: 1px solid var(--pink-color);
+                        }
+                        .nav-link:active {
+                            background-color: var(--pink-color);
+                          }
+                    }
+                }
+            }
+        }
+    }
+}
+/* //////////////////MEDIA QUERY FOR NAV///////////////// */
+@media screen and (max-width: 1100px){
+    header{
+       .navbar{
+           .container-fluid{
+               .navbar-brand{
+                   .logo{
+                        width: 80px;
+                    }
+                }
+
+                .navbar-collapse{
+                    .navbar-nav{
+                        .nav-item{
+                            .nav-link{
+                                font-size: 1.5rem;
+                                padding-right: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+.home{
+    /* border: 2px solid red; */
+    height: 100vh;
+    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(https://i.ibb.co/M1pH9Gv/background-Food-Img.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 6rem;
+
+
+    .heading-top{
+        font-family: "Nunito", sans-serif;
+        font-weight: 800;
+    }
+    .pink-color{
+        color: var(--pink-color);
+    }
+
+
+    .p-text{
+        font-size: 1.5rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* .left-align{
+        align-items: start;
+        text-align: left;
+    } */
+
+    .h-image{
+        /* border: 1px solid blue; */
+        width: 85%;
+        animation: imgRotate 50s linear infinite;
+        cursor: pointer;
+    }
+
+}
+@keyframes imgRotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* ///////////////////MEDIA QUERY FOR HOME SECTION//////////////// */
+
+@media screen and (max-width: 1100px){
+   .home{
+    padding-top: 13rem;
+
+    .heading-top {
+        font-size: 29px;
+        line-height: 47px;
+    }
+    .p-text {
+        line-height: 34px;
+    }
+       .h-image{
+            width: 78%;
+        }
+    }
+}
+@media screen and (max-width: 800px){
+   .home{
+
+    .heading-top {
+        font-size: 21px;
+        line-height: 38px;
+    }
+    .p-text {
+        font-size: 1rem;
+    }
+    }
+}
+@media screen and (max-width: 500px){
+   .home{
+    padding-top: 9rem;
+
+    .heading-top {
+        font-size: 21px;
+        line-height: 38px;
+    }
+    .p-text {
+        font-size: 1rem;
+    }
+
+    .h-image{
+        width: 72%;
+    }
+    }
+}
+
+/* ///////////////////////////SEARCH SECTION ////////////////////// */
+.search{
+    /* border: 2px solid pink; */
+    overflow: hidden;
+
+    h2{
+        font-size: 2rem;
+        font-family: 'Poppins', sans-serif;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+        font-weight: 900;
+        color: var(--pink-color);
+        text-decoration: double;
+        text-decoration: underline;
+    }
+
+    .half-row{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        .half-width{
+            width: 45%;
+            /* border: 2px solid green; */
+
+
+            .card{
+                border: none;
+
+                .card-item {
+                    /* box-shadow: 0 0 45px rgba(229, 7, 7, 0.884); */
+                    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+                    transition: 0.7s;
+
+                    span{
+                        color: var(--light-pink);
+                        font-size: 25px;
+                        padding: 5px;
+                    }
+
+                    h5{
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        color: var(--pink-color);
+                        transition: 0.7s;
+                    }
+
+                    .card-text{
+                        font-size: 0.9rem;
+                        padding-right: 2rem;
+                        padding-top: 5px;
+                        color: var(--dark-color);
+                    }
+
+                }
+                .card-item:hover{
+                    background: var(--pink-color);
+
+                    span{
+                        color: var(--yellow-color);
+                    }
+
+                    h5{
+                        color: var(--bright-color);
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}
+/* /////////////////////////////MEDIA QUERY FOR SEARCH SECTION///////////////////////// */
+@media screen and (max-width: 800px){
+    .search{
+        h2{
+            font-size: 1.5rem;
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    .search{
+        h2{
+            font-size: 1.2rem;
+        }
+
+        .half-row{
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            .half-width{
+                
+
+                .card{
+
+                    .card-item{
+
+                        h5 {
+                            font-size: 1rem;
+                        }
+                            
+                            
+                        .card-text{
+                            font-size: 0.7rem;
+                            padding-right: 1rem;
+                            padding-top: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px){
+    .search{
+        h2{
+            font-size: 1rem;
+        }
+
+        .half-row{
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            .half-width{
+
+
+                .card{
+
+                    .card-item{
+
+                        span{
+                            font-size: 15px;
+                        }
+
+                         h5 {
+                            font-size: 0.8rem;
+                        }
+                            
+                            
+                        .card-text{
+                            font-size: 0.6rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 350px){
+    .search{
+        h2{
+            font-size: 0.8rem;
+        }
+
+        .half-row{
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+            .half-width{
+
+                .card{
+
+                    .card-item{
+
+                         span{
+                            font-size: 12px;
+                        }
+                        
+                         h5 {
+                            font-size: 0.7rem;
+                        }
+
+                                                
+                       .card-text{
+                            font-size: 0.5rem;
+ 
+                       }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.quicksearch{
+    /* border: 2px solid green; */
+    /* height: 400px; */
+    background: var(--light-pink);
+    overflow: hidden;
+    padding-bottom: 50px;
+
+    h2{
+        font-size: 2rem;
+        font-family: 'Poppins', sans-serif;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+        font-weight: 900;
+        color: var(--pink-color);
+        text-decoration: double;
+        text-decoration: underline;
+    }
+
+    .quicksearch-div{
+
+        .quicksearch-col{
+
+            .card{
+                box-shadow: 8px 12px 11px var(--pink-color);
+                border: none;
+                transition: all .50s ease;
+
+                h5{
+                    color: var(--pink-color);
+                }
+                p{
+                    color: var(--dark-color);
+                }
+
+                .card-width{
+                    height: 350px;
+                }
+            }
+            .card:hover{
+                 cursor: pointer;
+                 transform: translateY(-15px);
+
+             }
+        }
+    }
+}
+
+
+footer{
+    border: 2px solid var(--dark-color);
+    /* height: 400px; */
+    background: var(--dark-color);
+    padding-bottom: 1rem;
+
+    .container{
+
+        .bottom-row{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            font-size: 1.5rem;
+
+            .col-md-6{
+                padding-top: 15px;
+
+                a{
+                    color: var(--light-pink);
+
+                    i{
+                        padding-right: 10px;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .copy-div{
+        font-size: 1.5rem;
+        padding-top: 10px;
+
+        .last{
+            color: var(--pink-color);
+        }
+    }
+}
+/* ///////////////////MEDIA QUERY FOR FOOTER SECTION/////////////// */
+
+@media screen and (max-width: 800px){
+    footer{
+        .container{
+
+            .bottom-row{
+                padding-top: 20px;
+                padding-bottom: 20px;
+                font-size: 1rem;
+
+                .col-md-6{
+                    padding-top: 15px;
+
+                    a{
+
+                        i{
+                            padding-right: 10px;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .copy-div{
+            font-size: 1rem;
+        }
+    }
+}
