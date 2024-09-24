@@ -1,5 +1,0 @@
-# mongodb password
-* XQol2lbKavW8PeCd
-
-# mongodb name
-* naya-database
