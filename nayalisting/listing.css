@@ -293,6 +293,10 @@ header{
 .listing-h5{
     padding-top: 15px;
 }
+.resName{
+    color: var(--pink-color);
+    font-weight: bold;
+}
 .mealRow{
     margin-top: 20px;
     margin-bottom: 10px;
@@ -307,6 +311,9 @@ header{
 /* ------------------------MEDIA QUERY FOR LISTING SECTION --------------------- */
 @media screen and (max-width: 500px){
     .listing-h5{
+        font-size: 1rem;
+    }
+    .resName{
         font-size: 1rem;
     }
     .mealSpan{

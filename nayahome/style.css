@@ -246,6 +246,7 @@ header{
                         padding-right: 2rem;
                         padding-top: 5px;
                         color: var(--dark-color);
+                        margin-bottom: 2px;
                     }
 
                 }
@@ -273,6 +274,20 @@ header{
     .search{
         h2{
             font-size: 1.5rem;
+        }
+        .half-row{
+
+            .half-width{
+
+                 .card{
+                    .card-item {
+
+                        .foodName{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -302,7 +317,9 @@ header{
                             font-size: 0.7rem;
                             padding-right: 1rem;
                             padding-top: 2px;
+                            margin-bottom: 0;
                         }
+                        
                     }
                 }
             }
