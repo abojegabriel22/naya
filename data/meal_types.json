@@ -1,0 +1,34 @@
+db.meal_types.insert(
+    [
+        {
+            "meal_type_id":1,
+            "meal_type_name":"Breakfast",
+            "description":"Start your day with exclusive breakfast options",
+            "meal_image":"https://i.ibb.co/FVhSTWK/breakfast.jpg"
+        },
+        {
+            "meal_type_id":2,
+            "meal_type_name":"Launch",
+            "description":"Continue your day with Delicious Launch options",
+            "meal_image":"https://i.ibb.co/8rPxkWP/lunch.jpg"
+        },
+        {
+            "meal_type_id":3,
+            "meal_type_name":"Dinner",
+            "description":"End your day with a satisfying dinner meal",
+            "meal_image":"https://i.ibb.co/XjzPqYv/dinner.jpg"
+        },
+        {
+            "meal_type_id":4,
+            "meal_type_name":"Adults Only",
+            "description":"As an adult, you need to taste the food for the adults. Above 18yrs only!",
+            "meal_image":"https://i.ibb.co/Wxk42ZW/download-6.jpg"
+        },
+        {
+            "meal_type_id":5,
+            "meal_type_name":"Beverages",
+            "description":"Enjoy the sweet taste of soft drinks and non alcoholic beverages",
+            "meal_image":"https://i.ibb.co/Nyyy0D0/download-5"
+        }
+    ]
+)

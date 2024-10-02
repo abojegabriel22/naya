@@ -1,0 +1,194 @@
+db.location.insert(
+    [
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":1,
+            "local_government_name":"Akwanga",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":2,
+            "local_government_name":"Awe",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":3,
+            "local_government_name":"Doma",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":4,
+            "local_government_name":"Karu",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":5,
+            "local_government_name":"Keana",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":6,
+            "local_government_name":"Kokona",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":7,
+            "local_government_name":"Lafia",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":8,
+            "local_government_name":"Nasarawa",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":9,
+            "local_government_name":"Nasarawa Eggon",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":10,
+            "local_government_name":"Obi",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":11,
+            "local_government_name":"Toto",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":12,
+            "local_government_name":"Wamba",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":1,
+            "state_id":1,
+            "state_name":"Nasarawa",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":13,
+            "local_government_name":"Keffi",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":2,
+            "state_id":2,
+            "state_name":"F.C.T",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":1,
+            "local_government_name":"Abaji",
+            "local_government_areas":"Abaji Central, Abaji North East, Abaji South East, Agyana/Pandagi, Rimba Ebagi, Nuku, Alu Mamagi, Yaba, Gurdi, Gawu"
+        },
+        {
+            "location_id":2,
+            "state_id":2,
+            "state_name":"F.C.T",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":2,
+            "local_government_name":"Abuja Municipal Area Council",
+            "local_government_areas":"City Centre, Garki, Kabusa, Wuse, Gwarinpa, Jiwa, Gui, Karshi, Orozo, Karu, Nyanya, Gwagwa."
+        },
+        {
+            "location_id":2,
+            "state_id":2,
+            "state_name":"F.C.T",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":3,
+            "local_government_name":"Bwari",
+            "local_government_areas":"Bwari Central, Kuduru, Igu, Shere, Kawu, Ushafa, Dutse Alhaji, Byazhin, Kubwa, Usuma."
+        },
+        {
+            "location_id":2,
+            "state_id":2,
+            "state_name":"F.C.T",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":4,
+            "local_government_name":"Gwagwalada",
+            "local_government_areas":"Gwagwalada Center, Kutunku, Staff Quarters, Ibwa, Dobi, Paiko,Tungan MajeZuba,Ikwa, Gwako."
+        },
+        {
+            "location_id":2,
+            "state_id":2,
+            "state_name":"F.C.T",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":5,
+            "local_government_name":"Kuje",
+            "local_government_areas":"Kuje, Chibiri, Gaube, Kwaku, Kabi, Rubochi, Gwargwada, Gudun Karya, Kujekwa, Yenche"
+        },
+        {
+            "location_id":2,
+            "state_id":2,
+            "state_name":"F.C.T",
+            "maps":"North central, Nigeria",
+            "maps_id":1,
+            "local_government_id":6,
+            "local_government_name":"Kwali",
+            "local_government_areas":"Ashara, Dafa, Gumbo, Kilankwa, Kundu, Kwali, Pai, Wako, Yangoji and Yebu."
+        }
+    ]
+)

@@ -1,0 +1,144 @@
+db.restaurants.insert(
+    {
+        "restaurant_id":1,
+        "restaurant_name":"Mercy Kitchen 2",
+        "restaurant_address":"Mami, Oposite Isa Mustapha Agwai 1 Polytechnic",
+        "restaurant_phone":"08022911266",
+        "location_id":1,
+        "state_id":1,
+        "restaurant_image":"https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "meal_types":[
+            {
+                "meal_type_id":2,
+                "meal_type_name":"Lunch"
+            },
+            {
+                "mal_type_id":3,
+                "meal_type_name":"Dinner"
+            },
+            {
+                "mal_type_id":4,
+                "meal_type_name":"Adults Only"
+            },
+        ],
+        "cuisines":[
+            {
+                "cuisine_id":1,
+                "cuisine_name":"Nigerian Foods"
+            },
+            {
+                "cuisine_id":2,
+                "cuisine_name":"Snacks"
+            }
+        ],
+        "opening_hours":"11AM",
+        "closed_hours":"11PM"
+    },
+    {
+        "restaurant_id":2,
+        "restaurant_name":"Amala Joints",
+        "restaurant_address":"Phase 3, kubwa Abuja",
+        "restaurant_phone":"08148543503",
+        "location_id":2,
+        "state_id":2,
+        "restaurant_image":"https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "meal_types":[
+            {
+                "meal_type_id":2,
+                "meal_type_name":"Lunch"
+            },
+            {
+                "mal_type_id":3,
+                "meal_type_name":"Dinner"
+            },
+            {
+                "mal_type_id":4,
+                "meal_type_name":"Adults Only"
+            },
+        ],
+        "cuisines":[
+            {
+                "cuisine_id":1,
+                "cuisine_name":"Nigerian Foods"
+            },
+            {
+                "cuisine_id":2,
+                "cuisine_name":"Snacks"
+            }
+        ],
+        "opening_hours":"11AM",
+        "closed_hours":"11PM"
+    },
+    {
+        "restaurant_id":3,
+        "restaurant_name":"Dominos Pizza & Cold Stone",
+        "restaurant_address":"3rd Avenu, Gwarimpa, Abuja",
+        "restaurant_phone":"08148543002",
+        "location_id":2,
+        "state_id":2,
+        "restaurant_image":"https://i.ibb.co/LCPY7w6/download-4.jpg",
+        "meal_types":[
+            {
+                "meal_type_id":2,
+                "meal_type_name":"Lunch"
+            },
+            {
+                "mal_type_id":3,
+                "meal_type_name":"Dinner"
+            },
+            {
+                "mal_type_id":4,
+                "meal_type_name":"Adults Only"
+            },
+            {
+                "mal_type_id":5,
+                "meal_type_name":"Beverages"
+            },
+        ],
+        "cuisines":[
+            {
+                "cuisine_id":2,
+                "cuisine_name":"Snacks"
+            }
+        ],
+        "opening_hours":"11AM",
+        "closed_hours":"10PM"
+    },
+    {
+        "restaurant_id":4,
+        "restaurant_name":"Chicken Republic",
+        "restaurant_address":"Two one, kubwa, Abuja",
+        "restaurant_phone":"09148543002",
+        "location_id":2,
+        "state_id":2,
+        "restaurant_image":"https://i.ibb.co/41JBkCv/download.png",
+        "meal_types":[
+            {
+                "meal_type_id":2,
+                "meal_type_name":"Lunch"
+            },
+            {
+                "mal_type_id":3,
+                "meal_type_name":"Dinner"
+            },
+            {
+                "mal_type_id":5,
+                "meal_type_name":"Beverages"
+            },
+        ],
+        "cuisines":[
+            {
+                "cuisine_id":1,
+                "cuisine_name":"Nigerian Foods"
+            },
+            {
+                "cuisine_id":2,
+                "cuisine_name":"Snacks"
+            }
+        ],
+        "opening_hours":"11AM",
+        "closed_hours":"10PM"
+    }
+)
+
+db.location.find({"local_governments.local_government_id":""})
