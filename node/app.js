@@ -4,12 +4,16 @@ import cors from"cors"
 import bodyParser from"body-parser"
 import { ObjectId } from "mongodb"
 import { dbConnect, getData, getDataSort, getDataSortLimit, postData, updateData, deleteData } from"./controller/dbController"
+import swaggerUi from "swagger-ui-express"
+import swaggerDocument from "./swagger.json"
 
 
 
 let app = express()
 dotenv.config()
 let port = process.env.PORT
+let key = process.env.KEY
+app.use("/api-doc",swaggerUi.serve,swaggerUi.setup(swaggerDocument))
 
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: true}))
@@ -25,31 +29,49 @@ app.get("/", (req, res)=>{
 app.get("/location", async (req, res)=>{
     let query = {}
     let collection = "location"
-    let output = await getData(collection, query)
-    res.status(200).send(output)
+    let authKey = req.headers["x-auth-token"]
+    if(authKey == key){
+        let output = await getData(collection, query)
+        res.status(200).send(output)
+    }else{
+        res.status(401).send("Unauthorized Access")
+    }
+    
 }) 
 
 app.get("/restaurants", async (req, res)=>{
     let query = {}
     let lgaId = Number(req.query.lgaId)
     let stateId = Number(req.query.stateId)
-    if(lgaId && stateId){
-        query = {
-            "state_id":stateId,
-            "local_government_id":lgaId
-        }
-    }
+    let authKey = req.headers["x-auth-token"]
     
-    let collection = "restaurants"
-    let output = await getData(collection, query)
-    res.status(200).send(output)
+    if(authKey == key){
+        if(lgaId && stateId){
+            query = {
+                "state_id":stateId,
+                "local_government_id":lgaId
+            }
+        }
+        let collection = "restaurants"
+        let output = await getData(collection, query)
+        res.status(200).send(output)
+    }else{
+        res.status(401).send("Unauthorized Access")
+    }
 })
 
 app.get("/mealType", async (req, res) => {
     let query = {}
     let collection = "meal_types"
-    let output = await getData(collection, query)
-    res.status(200).send(output)
+    let authKey = req.headers["x-auth-token"]
+    if(authKey == key){
+        let output = await getData(collection, query)
+        res.status(200).send(output)
+    }
+    else{
+        res.status(401).send("Unauthorized Access")
+    }
+    
 })
 
 
@@ -57,22 +79,35 @@ app.get("/mealType", async (req, res) => {
     let query = {}
     let collection = "restaurants"
     let lgaId = Number(req.params.lgaId)
+    let authKey = req.headers["x-auth-token"]
 
-    if(lgaId){
-        query = {
-            "local_government_id":lgaId
+    if(authKey == key){
+        if(lgaId){
+            query = {
+                "local_government_id":lgaId
+            }
         }
+        let output = await getData(collection, query)
+        res.status(200).send(output)
     }
-    let output = await getData(collection, query)
-    res.status(200).send(output)
+    else{
+        res.status(401).send("Unauthorized Access")
+    }
+
  })
 
 //  list of menus
  app.get("/menus", async (req, res) => {
     let query = {}
     let collection = "restaurant_menu"
-    let output = await getData(collection, query)
-    res.status(200).send(output)
+    let authKey = req.headers["x-auth-token"]
+    if(authKey == key){
+        let output = await getData(collection, query)
+        res.status(200).send(output)
+    }else{
+        res.status(401).send("Unauthorized Access")
+    }
+    
  })
 
 //  menus with respect to restaurants
@@ -86,54 +121,63 @@ app.get("/mealType", async (req, res) => {
     let sort = {menu_price:1}
     let skip = 0
     let limit = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-
-    if(req.query.sort){
-        sort={menu_price:req.query.sort}
-    }
-
-    if(req.query.skip && req.query.limit){
-        skip = Number(req.query.skip),
-        limit = Number(req.query.limit)
-    }
-
-    // menus with respect to restaurants + kitchen
-    if(kitchenId){
-        query = {
-            "restaurant_id":restId,
-            "kitchen.kitchen_id":kitchenId
+    let authKey = req.headers["x-auth-token"]
+    if(authKey == key){
+        if(req.query.sort){
+            sort={menu_price:req.query.sort}
         }
-    }
-    else if(hcost && lcost){
-        query = {
-            "restaurant_id":restId,
-            $and:[{menu_price:{$gt:lcost, $lt:hcost}}]
+        if(req.query.skip && req.query.limit){
+            skip = Number(req.query.skip),
+            limit = Number(req.query.limit)
         }
-    }
-    else{
-        query = {
-            "restaurant_id":restId
+            // menus with respect to restaurants + kitchen
+        if(kitchenId){
+            query = {
+                "restaurant_id":restId,
+                "kitchen.kitchen_id":kitchenId
+            }
         }
+        else if(hcost && lcost){
+            query = {
+                "restaurant_id":restId,
+                $and:[{menu_price:{$gt:lcost, $lt:hcost}}]
+            }
+        }
+        else{
+            query = {
+                "restaurant_id":restId
+            }
+        }
+        let output = await getDataSortLimit(collection, query, sort, skip, limit)
+        res.status(200).send(output)
+    }else{
+        res.status(401).send("Unauthorized Access")
     }
-    let output = await getDataSortLimit(collection, query, sort, skip, limit)
-    res.status(200).send(output)
+
  })
 
 //  restaurants  details 
  app.get("/restDetails/:id", async (req, res) => {
     // query = {restaurant_id:Number(req.params.id)}
     let query = {}
-    let collection = "restaurants"
-    const validateObjId = (id) => {
-        const idPattern = /^[0-9a-fA-F]{24}$/
-        return idPattern.test(id)
-    }
-    if(validateObjId(req.params.id)){
-        query = {_id:new ObjectId(req.params.id)}
-        let output = await getData(collection, query)
-        res.status(200).send(output)
+    let authKey = req.headers["x-auth-token"]
+    if(authKey == key){
+        let collection = "restaurants"
+        const validateObjId = (id) => {
+            const idPattern = /^[0-9a-fA-F]{24}$/
+            return idPattern.test(id)
+        }
+        if(validateObjId(req.params.id)){
+            query = {_id:new ObjectId(req.params.id)}
+            let output = await getData(collection, query)
+            res.status(200).send(output)
+        }
+        else{
+            res.status(400).send({"Error":"Invalid restaurant ID"})
+        }
     }
     else{
-        res.status(400).send({"Error":"Invalid ID"})
+        res.status(401).send("Unauthorized Access")
     }
  })
 
