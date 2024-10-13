@@ -41,6 +41,7 @@ db.restaurants.insert(
         "restaurant_phone":"08148543503",
         "location_id":2,
         "state_id":2,
+        "local_government_id":3,
         "restaurant_image":"https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600",
         "meal_types":[
             {
@@ -76,6 +77,7 @@ db.restaurants.insert(
         "restaurant_phone":"08148543002",
         "location_id":2,
         "state_id":2,
+        "local_government_id":2,
         "restaurant_image":"https://i.ibb.co/LCPY7w6/download-4.jpg",
         "meal_types":[
             {
@@ -111,7 +113,44 @@ db.restaurants.insert(
         "restaurant_phone":"09148543002",
         "location_id":2,
         "state_id":2,
+        "local_government_id":3,
         "restaurant_image":"https://i.ibb.co/41JBkCv/download.png",
+        "meal_types":[
+            {
+                "meal_type_id":2,
+                "meal_type_name":"Lunch"
+            },
+            {
+                "mal_type_id":3,
+                "meal_type_name":"Dinner"
+            },
+            {
+                "mal_type_id":5,
+                "meal_type_name":"Beverages"
+            },
+        ],
+        "cuisines":[
+            {
+                "cuisine_id":1,
+                "cuisine_name":"Nigerian Foods"
+            },
+            {
+                "cuisine_id":2,
+                "cuisine_name":"Snacks"
+            }
+        ],
+        "opening_hours":"11AM",
+        "closed_hours":"10PM"
+    },
+    {
+        "restaurant_id":5,
+        "restaurant_name":"Calabar MaMa Restaurant",
+        "restaurant_address":"zone 7, Duts-Alhaji, Abuja",
+        "restaurant_phone":"09148543000",
+        "location_id":2,
+        "state_id":2,
+        "local_government_id":3,
+        "restaurant_image":"https://i.ibb.co/w4ZgSmC/our-customer-enjoying.jpg",
         "meal_types":[
             {
                 "meal_type_id":2,
@@ -142,3 +181,12 @@ db.restaurants.insert(
 )
 
 db.location.find({"local_governments.local_government_id":""})
+
+db.restaurants.updateOne(
+    {"restaurant_id":2},
+    {
+        $set:{
+            "local_government_id":3
+        }
+    }
+)

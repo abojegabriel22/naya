@@ -37,6 +37,16 @@ db.restaurant_menu.insert(
             "menu_name": "Swallow & Soups",
             "description": "The perfect combination with sweet taste. Your rice partner! Tastes so sweet",
             "restaurant_id": 1,
+            "kitchen":[
+                {
+                    "kitchen_id": 3,
+                    "kitchen_name": "North Nigerian"
+                },
+                {
+                    "kitchen_id": 2,
+                    "kitchen_name": "Local"
+                }
+            ],
             "menu_image": "https://b.zmtcdn.com/data/dish_photos/03b/787727453bd857cff70be6560bfb603b.png",
             "menu_price": "8000"
         },
@@ -77,8 +87,52 @@ db.restaurant_menu.insert(
             "menu_name": "Vanilla Ice Cream",
             "description": "The cold Ice cream  with sweet taste. Your Pizza partner! Tastes so sweet.",
             "restaurant_id": 4,
+            "kitchen":[
+                {
+
+                }
+            ]
             "menu_image": "https://i.ibb.co/chp8V8V/icecream.jpg",
+            "menu_price": "1900"
+        },
+
+        {
+            "menu_id":11,
+            "menu_name": "Otong Soup",
+            "description": "This soup naturally goes with “Anyan ekpan”; a delicacy made from cassava, cocoyam, water yam or a combination of at least two of these. | Being the Efik version of Okro soup, it is characterised by two main ingredients bush mango and pumpkin(Ugwu) which is high in iron content.",
+            "restaurant_id": 5,
+            "kitchen":[
+                {
+                    "kitchen_id": 1,
+                    "kitchen_name": "Calabar Kitchen"
+                },
+                {
+                    "kitchen_id": 2,
+                    "kitchen_name": "Local"
+                }
+            ],
+            "menu_image": "https://i.ibb.co/0mfw2RY/otong-soup-21-1.jpg",
             "menu_price": "1900"
         }
     ]
+)
+
+db.restaurant_menu.updateOne(
+    {
+        "menu_id":5
+    },
+    {
+        $set:{
+            "kitchen":[
+                {
+                    "kitchen_id": 3,
+                    "kitchen_name": "North Nigerian"
+                },
+                {
+                    "kitchen_id": 2,
+                    "kitchen_name": "Local"
+                }
+            ]
+        }
+    }
 )

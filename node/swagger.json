@@ -247,6 +247,59 @@
                     }
                 }
             }
+        },
+        "/updateOrder":{
+            "summary":"Testing updateorder Check Route",
+            "put":{
+                "description":"User updateorders Check",
+                "tags":["PUBLIC ROUTE"],
+                "requestBody":{
+                    "required":true,
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "id":"string"
+                            },
+                            "example":{
+                                "_id":"6702d568a8f9b8bb8716a3b4",
+                                "status":"On the way"
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                        "description":"User updateorders Pass"
+                    }
+                }
+            }
+        },
+        "/deleteOrder":{
+            "summary":"Testing deleteOrder Check Route",
+            "delete":{
+                "description":"User deleteOrder Check",
+                "tags":["PUBLIC ROUTE"],
+                "requestBody":{
+                    "required":true,
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "id":"string"
+                            },
+                            "example":{
+                                "_id":"6702d52e0b6e1398e56a8681"
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                        "description":"User deleteOrder Pass"
+                    }
+                }
+            }
         }
     }
 }
