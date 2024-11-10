@@ -1,186 +1,206 @@
 db.restaurants.insert(
+[
     {
-        "restaurant_id":1,
-        "restaurant_name":"Mercy Kitchen 2",
-        "restaurant_address":"Mami, Oposite Isa Mustapha Agwai 1 Polytechnic",
-        "restaurant_phone":"08022911266",
-        "location_id":1,
-        "state_id":1,
-        "restaurant_image":"https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "meal_types":[
+        "restaurant_id": 1,
+        "restaurant_name": "Mercy Kitchen 2",
+        "restaurant_address": "Mami, Oposite Isa Mustapha Agwai 1 Polytechnic",
+        "restaurant_phone": "08022911266",
+        "location_id": 1,
+        "state_id": 1,
+        "restaurant_image": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "meal_types": [
             {
-                "meal_type_id":2,
-                "meal_type_name":"Lunch"
+                "meal_type_id": 2,
+                "meal_type_name": "Lunch"
             },
             {
-                "mal_type_id":3,
-                "meal_type_name":"Dinner"
+                "mal_type_id": 3,
+                "meal_type_name": "Dinner"
             },
             {
-                "mal_type_id":4,
-                "meal_type_name":"Adults Only"
-            },
-        ],
-        "cuisines":[
-            {
-                "cuisine_id":1,
-                "cuisine_name":"Nigerian Foods"
-            },
-            {
-                "cuisine_id":2,
-                "cuisine_name":"Snacks"
+                "mal_type_id": 4,
+                "meal_type_name": "Adults Only"
             }
         ],
-        "opening_hours":"11AM",
-        "closed_hours":"11PM"
+        "cuisines": [
+            {
+                "cuisine_id": 1,
+                "cuisine_name": "Nigerian Foods"
+            }
+        ],
+        "opening_hours": "11AM",
+        "closed_hours": "11PM",
+        "local_government_id": 7,
+        "kitchen":[
+            {
+                "kitchen_id": 2,
+                "kitchen_name": "North Nigerian"
+            },
+            {
+                "kitchen_id": 4,
+                "kitchen_name": "Local"
+            }
+        ]
     },
     {
-        "restaurant_id":2,
-        "restaurant_name":"Amala Joints",
-        "restaurant_address":"Phase 3, kubwa Abuja",
-        "restaurant_phone":"08148543503",
-        "location_id":2,
-        "state_id":2,
-        "local_government_id":3,
-        "restaurant_image":"https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "meal_types":[
+        "restaurant_id": 2,
+        "restaurant_name": "Amala Joint",
+        "restaurant_address": "Phase 4, kubwa Abuja",
+        "restaurant_phone": "08148540000",
+        "location_id": 2,
+        "state_id": 2,
+        "restaurant_image": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "meal_types": [
             {
-                "meal_type_id":2,
-                "meal_type_name":"Lunch"
+                "meal_type_id": 2,
+                "meal_type_name": "Lunch"
             },
             {
-                "mal_type_id":3,
-                "meal_type_name":"Dinner"
+                "mal_type_id": 3,
+                "meal_type_name": "Dinner"
             },
             {
-                "mal_type_id":4,
-                "meal_type_name":"Adults Only"
-            },
-        ],
-        "cuisines":[
-            {
-                "cuisine_id":1,
-                "cuisine_name":"Nigerian Foods"
-            },
-            {
-                "cuisine_id":2,
-                "cuisine_name":"Snacks"
+                "mal_type_id": 4,
+                "meal_type_name": "Adults Only"
             }
         ],
-        "opening_hours":"11AM",
-        "closed_hours":"11PM"
+        "cuisines": [
+            {
+                "cuisine_id": 1,
+                "cuisine_name": "Nigerian Foods"
+            },
+            {
+                "cuisine_id": 2,
+                "cuisine_name": "Snacks"
+            }
+        ],
+        "opening_hours": "11AM",
+        "closed_hours": "11PM",
+        "local_government_id": 3,
+        "kitchen": [
+            {
+                "kitchen_id": 2,
+                "kitchen_name": "North Nigerian"
+            },
+            {
+                "kitchen_id": 2,
+                "kitchen_name": "Snacks"
+            },
+            {
+                "kitchen_id": 4,
+                "kitchen_name": "Local"
+            },
+            {
+                "kitchen_id": 6,
+                "kitchen_name": "Yoruba Kitchen"
+            }
+        ]
     },
     {
-        "restaurant_id":3,
-        "restaurant_name":"Dominos Pizza & Cold Stone",
-        "restaurant_address":"3rd Avenu, Gwarimpa, Abuja",
-        "restaurant_phone":"08148543002",
-        "location_id":2,
-        "state_id":2,
-        "local_government_id":2,
-        "restaurant_image":"https://i.ibb.co/LCPY7w6/download-4.jpg",
-        "meal_types":[
+        "_id": "66fd04d881218a860af8266a",
+        "restaurant_id": 3,
+        "restaurant_name": "Dominos Pizza & Cold Stone",
+        "restaurant_address": "3rd Avenu, Gwarimpa, Abuja",
+        "restaurant_phone": "08148543002",
+        "location_id": 2,
+        "state_id": 2,
+        "restaurant_image": "https://i.ibb.co/LCPY7w6/download-4.jpg",
+        "meal_types": [
             {
-                "meal_type_id":2,
-                "meal_type_name":"Lunch"
+                "meal_type_id": 2,
+                "meal_type_name": "Lunch"
             },
             {
-                "mal_type_id":3,
-                "meal_type_name":"Dinner"
+                "mal_type_id": 3,
+                "meal_type_name": "Dinner"
             },
             {
-                "mal_type_id":4,
-                "meal_type_name":"Adults Only"
+                "mal_type_id": 4,
+                "meal_type_name": "Adults Only"
             },
             {
-                "mal_type_id":5,
-                "meal_type_name":"Beverages"
-            },
-        ],
-        "cuisines":[
-            {
-                "cuisine_id":2,
-                "cuisine_name":"Snacks"
+                "mal_type_id": 5,
+                "meal_type_name": "Beverages"
             }
         ],
-        "opening_hours":"11AM",
-        "closed_hours":"10PM"
+        "cuisines": [
+            {
+                "cuisine_id": 2,
+                "cuisine_name": "Snacks"
+            }
+        ],
+        "opening_hours": "11AM",
+        "closed_hours": "10PM",
+        "local_government_id": 2,
+        "kitchen":[
+            {
+                "kitchen_id": 5,
+                "kitchen_name": "Foreign"
+            }
+        ]
     },
     {
-        "restaurant_id":4,
-        "restaurant_name":"Chicken Republic",
-        "restaurant_address":"Two one, kubwa, Abuja",
-        "restaurant_phone":"09148543002",
-        "location_id":2,
-        "state_id":2,
-        "local_government_id":3,
-        "restaurant_image":"https://i.ibb.co/41JBkCv/download.png",
-        "meal_types":[
+        "_id": "66fd05a481218a860af96d0d",
+        "restaurant_id": 4,
+        "restaurant_name": "Chicken Republic",
+        "restaurant_address": "Two one, kubwa, Abuja",
+        "restaurant_phone": "09148543002",
+        "location_id": 2,
+        "state_id": 2,
+        "restaurant_image": "https://i.ibb.co/41JBkCv/download.png",
+        "meal_types": [
             {
-                "meal_type_id":2,
-                "meal_type_name":"Lunch"
+                "meal_type_id": 2,
+                "meal_type_name": "Lunch"
             },
             {
-                "mal_type_id":3,
-                "meal_type_name":"Dinner"
+                "mal_type_id": 3,
+                "meal_type_name": "Dinner"
             },
             {
-                "mal_type_id":5,
-                "meal_type_name":"Beverages"
-            },
-        ],
-        "cuisines":[
-            {
-                "cuisine_id":1,
-                "cuisine_name":"Nigerian Foods"
-            },
-            {
-                "cuisine_id":2,
-                "cuisine_name":"Snacks"
+                "mal_type_id": 5,
+                "meal_type_name": "Beverages"
             }
         ],
-        "opening_hours":"11AM",
-        "closed_hours":"10PM"
-    },
-    {
-        "restaurant_id":5,
-        "restaurant_name":"Calabar MaMa Restaurant",
-        "restaurant_address":"zone 7, Duts-Alhaji, Abuja",
-        "restaurant_phone":"09148543000",
-        "location_id":2,
-        "state_id":2,
-        "local_government_id":3,
-        "restaurant_image":"https://i.ibb.co/w4ZgSmC/our-customer-enjoying.jpg",
-        "meal_types":[
+        "cuisines": [
             {
-                "meal_type_id":2,
-                "meal_type_name":"Lunch"
+                "cuisine_id": 1,
+                "cuisine_name": "Nigerian Foods"
             },
             {
-                "mal_type_id":3,
-                "meal_type_name":"Dinner"
-            },
-            {
-                "mal_type_id":5,
-                "meal_type_name":"Beverages"
-            },
-        ],
-        "cuisines":[
-            {
-                "cuisine_id":1,
-                "cuisine_name":"Nigerian Foods"
-            },
-            {
-                "cuisine_id":2,
-                "cuisine_name":"Snacks"
+                "cuisine_id": 2,
+                "cuisine_name": "Snacks"
             }
         ],
-        "opening_hours":"11AM",
-        "closed_hours":"10PM"
+        "opening_hours": "11AM",
+        "closed_hours": "10PM",
+        "local_government_id": 3,
+        "kitchen":[
+            {
+                "kitchen_id": 5,
+                "kitchen_name": "Foreign"
+            }
+        ]
     }
+]
 )
 
 db.location.find({"local_governments.local_government_id":""})
+
+db.restaurants.updateOne(
+    {"restaurant_id":4},
+    {
+        $set:{
+            "kitchen":[
+            {
+                "kitchen_id": 5,
+                "kitchen_name": "Foreign"
+            }
+        ]
+        }
+    }
+)
+
 
 db.restaurants.updateOne(
     {"restaurant_id":2},
@@ -190,3 +210,32 @@ db.restaurants.updateOne(
         }
     }
 )
+
+
+
+// "kitchen":[
+//             {
+//                 "kitchen_id": 1,
+//                 "kitchen_name": "Calabar Kitchen"
+//             },
+//             {
+//                 "kitchen_id": 2,
+//                 "kitchen_name": "North Nigerian"
+//             },
+//             {
+//                 "kitchen_id": 3,
+//                 "kitchen_name": "Igbo Kitchen"
+//             },
+//             {
+//                 "kitchen_id": 4,
+//                 "kitchen_name": "Local"
+//             }
+//             {
+//                 "kitchen_id": 5,
+//                 "kitchen_name": "Foreign"
+//             },
+//             {
+//                 "kitchen_id": 6,
+//                 "kitchen_name": "Yoruba Kitchen"
+//             }
+//         ]

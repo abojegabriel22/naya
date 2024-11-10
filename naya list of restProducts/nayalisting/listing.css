@@ -248,10 +248,6 @@ header{
             }
         }
     }
-    .noUnderline a{
-        text-decoration: none;
-        font-size: 20px;
-    }
 }
 
 /* --------------MEDIA QUERY FOR LISTING SECTION --------------- */
