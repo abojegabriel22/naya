@@ -28,10 +28,10 @@ home page
 * https://netflixapi-7fvc.onrender.com/api-doc
 * [get list of menus route](https://naya-api-1.onrender.com/menus)
 
-# menus with respect to restaurants (GET)
-* http://localhost:1313/menu/4
+# menus with respect to restaurants + lgaId + stateId(GET)
+* http://localhost:1313/menu/2/3/2
 * https://netflixapi-7fvc.onrender.com/api-doc
-* [get list of menus wrt restaurants route](https://naya-api-1.onrender.com/menu/4)
+* [get list of menus wrt restaurants route](https://naya-api-1.onrender.com/menu/2/3/2)
 
 + arrangement in ascending or descending order
 * http://localhost:1313/menu/1?sort=-1

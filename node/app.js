@@ -111,10 +111,12 @@ app.get("/mealType", async (req, res) => {
  })
 
 //  menus with respect to restaurants
- app.get("/menu/:restId", async (req, res) => {
+ app.get("/menu/:restId/:lgaId/:stateId", async (req, res) => {
     let query = {}
     let collection = "restaurant_menu"
     let restId = Number(req.params.restId)
+    let lgaId = Number(req.params.lgaId)
+    let stateId = Number(req.params.stateId)
     let kitchenId = Number(req.query.kitchenId)
     let hcost = Number(req.query.hcost)
     let lcost = Number(req.query.lcost)
@@ -122,7 +124,7 @@ app.get("/mealType", async (req, res) => {
     let skip = 0
     let limit = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     let authKey = req.headers["x-auth-token"]
-    if(authKey == key){
+    if(authKey === key){
         if(req.query.sort){
             sort={menu_price:req.query.sort}
         }
@@ -130,24 +132,21 @@ app.get("/mealType", async (req, res) => {
             skip = Number(req.query.skip),
             limit = Number(req.query.limit)
         }
+
+        // built query with all three parameters
+        query = {
+            "restaurant_id":restId,
+            "local_government_id":lgaId,
+            "state_id":stateId
+        }
             // menus with respect to restaurants + kitchen
         if(kitchenId){
-            query = {
-                "restaurant_id":restId,
-                "kitchen.kitchen_id":kitchenId
-            }
+            query["kitchen.kitchen_id"] = kitchenId
         }
         else if(hcost && lcost){
-            query = {
-                "restaurant_id":restId,
-                $and:[{menu_price:{$gt:lcost, $lt:hcost}}]
-            }
+            query.$and[{menu_price:{$gt:lcost, $lt:hcost}}]
         }
-        else{
-            query = {
-                "restaurant_id":restId
-            }
-        }
+        
         let output = await getDataSortLimit(collection, query, sort, skip, limit)
         res.status(200).send(output)
     }else{
