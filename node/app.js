@@ -44,9 +44,17 @@ app.get("/restaurants", async (req, res)=>{
     let lgaId = Number(req.query.lgaId)
     let stateId = Number(req.query.stateId)
     let authKey = req.headers["x-auth-token"]
+    let kitchenId = Number(req.query.kitchenId)
     
     if(authKey == key){
-        if(lgaId && stateId){
+        if(lgaId && stateId && kitchenId){
+            query = {
+                "state_id":stateId,
+                "local_government_id":lgaId,
+                "kitchen.kitchen_id":kitchenId
+            }
+        }
+        else if(lgaId && stateId){
             query = {
                 "state_id":stateId,
                 "local_government_id":lgaId
@@ -162,6 +170,29 @@ app.get("/mealType", async (req, res) => {
     let authKey = req.headers["x-auth-token"]
     if(authKey == key){
         let collection = "restaurants"
+        const validateObjId = (id) => {
+            const idPattern = /^[0-9a-fA-F]{24}$/
+            return idPattern.test(id)
+        }
+        if(validateObjId(req.params.id)){
+            query = {_id:new ObjectId(req.params.id)}
+            let output = await getData(collection, query)
+            res.status(200).send(output)
+        }
+        else{
+            res.status(400).send({"Error":"Invalid restaurant ID"})
+        }
+    }
+    else{
+        res.status(401).send("Unauthorized Access")
+    }
+ })
+ app.get("/menuDetails/:id", async (req, res) => {
+    // query = {restaurant_id:Number(req.params.id)}
+    let query = {}
+    let authKey = req.headers["x-auth-token"]
+    if(authKey == key){
+        let collection = "restaurant_menu"
         const validateObjId = (id) => {
             const idPattern = /^[0-9a-fA-F]{24}$/
             return idPattern.test(id)

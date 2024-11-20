@@ -41,21 +41,68 @@
                 }
             }
         },
+        
         "/restaurants":{
-            "summary":"Testing restaurants Check Route",
+            "summary":"Get restaurants",
             "get":{
-                "description":"User restaurant Check",
-                "tags":["PUBLIC ROUTE"],
+                "description":"Retrieve restaurants based on state, local government, and kitchen.",
+                "tags":["Restaurants"],
                 "parameters":[
                     {
                         "name":"x-auth-token",
                         "in":"header",
                         "required":true
+                    },
+                    {
+                        "name":"stateId",
+                        "in":"query",
+                        "required":true,
+                        "description":"The ID of the state",
+                        "schema":{
+                            "type":"integer"
+                        }
+                    },
+                    {
+                        "name":"lgaId",
+                        "in":"query",
+                        "required":true,
+                        "description":"The ID of the local government",
+                        "schema":{
+                            "type":"integer"
+                        }
+                    },
+                    {
+                        "name":"kitchenId",
+                        "in":"query",
+                        "required":true,
+                        "description":"The ID of the kitchen type",
+                        "schema":{
+                            "type":"integer"
+                        }
                     }
                 ],
                 "responses":{
                     "200":{
-                        "description":"User restaurants Pass"
+                        "description":"Successful response",
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/components/schemas/Restaurant"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400":{
+                        "description":"Bad request"
+                    },
+                    "404":{
+                        "description":"Not Found"
+                    },
+                    "500":{
+                        "description":"Internal Server"
                     }
                 }
             }
@@ -122,7 +169,7 @@
                 }
             }
         },
-        "/menu/{restId}":{
+        "/menu/{restId}/{lgaId}/{stateId}":{
             "summary":"Testing menu Check Route",
             "get":{
                 "description":"User menu Check",
@@ -131,12 +178,34 @@
                     {
                         "name":"x-auth-token",
                         "in":"header",
-                        "required":true
+                        "required":true,
+                        "schema":{
+                            "type":"string"
+                        }
                     },
                     {
                         "name":"restId",
                         "in":"path",
-                        "required":true
+                        "required":true,
+                        "schema":{
+                            "type":"integer"
+                        }
+                    },
+                    {
+                        "name":"lgaId",
+                        "in":"path",
+                        "required":true,
+                        "schema":{
+                            "type":"integer"
+                        }
+                    },
+                    {
+                        "name":"stateId",
+                        "in":"path",
+                        "required":true,
+                        "schema":{
+                            "type":"integer"
+                        }
                     }
                 ],
                 "responses":{
@@ -166,6 +235,30 @@
                 "responses":{
                     "200":{
                         "description":"User restaurant details Pass"
+                    }
+                }
+            }
+        },
+        "/menuDetails/{id}":{
+            "summary":"Testing menu details Check Route",
+            "get":{
+                "description":"User menu details Check",
+                "tags":["PUBLIC ROUTE"],
+                "parameters":[
+                    {
+                        "name":"x-auth-token",
+                        "in":"header",
+                        "required":true
+                    },
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "required":true
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"User menu details Pass"
                     }
                 }
             }
