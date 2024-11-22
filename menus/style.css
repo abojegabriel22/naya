@@ -194,6 +194,79 @@ header{
 
 /* /////////////////////menus section /////////////// */
 
+    .container{
+        .listingh2{
+            color: var(--pink-color);
+            padding-top: 2rem;
+            text-decoration: underline;
+            font-weight: 900;
+        }
+
+        .listingRow{
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            /* width: 50%; */
+
+            .listingCol{
+                padding: 1rem;
+                box-shadow: -2px 5px 11px var(--pink-color);
+
+                h3{
+                    padding: 1rem;
+                    color: var(--pink-color);
+                }
+                ul{
+
+                    .list-group-item{
+                        background: var(--pink-color);
+                        border-radius: 15px;
+
+                        label{
+                            color: var(--bright-color);
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                li:hover{
+                    background: var(--dark-color);
+                    cursor: pointer;
+                }
+            }
+            .firstCol{
+                border-right: 10px solid var(--pink-color);
+            }
+        }
+    }
+    .noUnderline a{
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+
+/* --------------MEDIA QUERY FOR LISTING SECTION --------------- */
+
+@media screen and (max-width: 800px){
+    .container {
+            & .listingRow {
+                & .listingCol {
+                    h3 {
+                        font-size: 1.2rem;
+                    }
+                    ul{
+                        & .list-group-item{
+                            font-size: 0.8rem;
+                            label{
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 
 /* -----------------------FOOTER SECTION =-------------------------- */
 footer{

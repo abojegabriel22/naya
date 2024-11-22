@@ -5,12 +5,24 @@ home page
 * https://netflixapi-7fvc.onrender.com/api-doc
 * [get locations route](https://naya-api-1.onrender.com/location)
 
-
+//
 # list of restaurants with respect to state and local governments of abuja (GET)
 * http://localhost:1313/restaurants?stateId=2&lgaId=2
 * https://netflixapi-7fvc.onrender.com/api-doc
 * [get restaurants with respect to state, local government route](https://naya-api-1.onrender.com/restaurants?stateId=2&lgaId=2)
+//
 
+//
+# list of restaurants with respect to state and local government plus kitchen
+* http://localhost:1313/restaurants?stateId=2&lgaId=3&kitchenId=4
+* https://naya-api-1.onrender.com/restaurants?stateId=2&lgaId=3&kitchenId=4
+//
+
+//
+# list of restaurants with respect to state and local government plus meal_types
+* http://localhost:1313/restaurants?stateId=2&lgaId=3&mealTypesId=4
+* https://naya-api-1.onrender.com/restaurants?stateId=2&lgaId=3&mealTypesId=4
+//
 
 # list of mealtypes [breakfast lunch and dinner] (GET)
 * http://localhost:1313/mealType
@@ -43,15 +55,19 @@ http://localhost:1313/menu/1?skip=3&limit=3
 * https://netflixapi-7fvc.onrender.com/api-doc
 * [get pagination route](https://naya-api-1.onrender.com/menu/1?skip=3&limit=3)
 
-# menus with respect to restaurants + cost (GET)
-* http://localhost:1313/menu/5?lcost=999&hcost=20000
+# menus with respect to restaurants + lgaId + stateId + cost (GET)
+* http://localhost:1313/menu/4/3/2?hcost=2000&lcost=50&sort=1
 * https://netflixapi-7fvc.onrender.com/api-doc
-* [get menus wrt rest + cost route](https://naya-api-1.onrender.com/menu/5?lcost=999&hcost=20000)
+* [get menus wrt rest + cost route](https://naya-api-1.onrender.com/menu/4/3/2?hcost=2000&lcost=50&sort=1)
 
 # menus with respect to restaurants + kitchen (GET)
 * http://localhost:1313/menu/1?kitchenId=2
 * https://netflixapi-7fvc.onrender.com/api-doc
 * [get menus wrt rest + kitchen route](https://naya-api-1.onrender.com/menu/1?kitchenId=2)
+# menu details using _id
+ http://localhost:1313/menuDetails/66fd08f63e31ba2663064c22
+* https://netflixapi-7fvc.onrender.com/api-doc
+* [get menus details route](https://naya-api-1.onrender.com/menuDetails/66fd08f63e31ba2663064c22)
 
 # details of restauratants with respect to id (GET)
 * http://localhost:1313/restDetails/3

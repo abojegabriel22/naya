@@ -45,6 +45,7 @@ app.get("/restaurants", async (req, res)=>{
     let stateId = Number(req.query.stateId)
     let authKey = req.headers["x-auth-token"]
     let kitchenId = Number(req.query.kitchenId)
+    let mealTypesId = Number(req.query.mealTypesId)
     
     if(authKey == key){
         if(lgaId && stateId && kitchenId){
@@ -52,6 +53,13 @@ app.get("/restaurants", async (req, res)=>{
                 "state_id":stateId,
                 "local_government_id":lgaId,
                 "kitchen.kitchen_id":kitchenId
+            }
+        }
+        else if(lgaId && stateId && mealTypesId){
+            query = {
+                "state_id":stateId,
+                "local_government_id":lgaId,
+                "meal_types.meal_type_id":mealTypesId
             }
         }
         else if(lgaId && stateId){
@@ -119,49 +127,66 @@ app.get("/mealType", async (req, res) => {
  })
 
 //  menus with respect to restaurants
- app.get("/menu/:restId/:lgaId/:stateId", async (req, res) => {
-    let query = {}
-    let collection = "restaurant_menu"
-    let restId = Number(req.params.restId)
-    let lgaId = Number(req.params.lgaId)
-    let stateId = Number(req.params.stateId)
-    let kitchenId = Number(req.query.kitchenId)
-    let hcost = Number(req.query.hcost)
-    let lcost = Number(req.query.lcost)
-    let sort = {menu_price:1}
-    let skip = 0
-    let limit = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-    let authKey = req.headers["x-auth-token"]
-    if(authKey === key){
-        if(req.query.sort){
-            sort={menu_price:req.query.sort}
-        }
-        if(req.query.skip && req.query.limit){
-            skip = Number(req.query.skip),
-            limit = Number(req.query.limit)
+app.get("/menu/:restId/:lgaId/:stateId", async (req, res) => {
+    let query = {};
+    let collection = "restaurant_menu";
+    let restId = Number(req.params.restId);
+    let lgaId = Number(req.params.lgaId);
+    let stateId = Number(req.params.stateId);
+    let kitchenId = Number(req.query.kitchenId);
+    let hcost = Number(req.query.hcost);
+    let lcost = Number(req.query.lcost);
+    let sort = { menu_price: 1 };
+    let skip = 0;
+    let limit = Number.MAX_SAFE_INTEGER; // Use a realistic high value for limit
+    let authKey = req.headers["x-auth-token"];
+
+    if (authKey === key) {
+        // Apply sorting if provided
+        if (req.query.sort) {
+            sort = { menu_price: Number(req.query.sort) };
         }
 
-        // built query with all three parameters
+        // Apply pagination if skip and limit are provided
+        if (req.query.skip && req.query.limit) {
+            skip = Number(req.query.skip);
+            limit = Number(req.query.limit);
+        }
+
+        // Base query using the three parameters
         query = {
-            "restaurant_id":restId,
-            "local_government_id":lgaId,
-            "state_id":stateId
-        }
-            // menus with respect to restaurants + kitchen
-        if(kitchenId){
-            query["kitchen.kitchen_id"] = kitchenId
-        }
-        else if(hcost && lcost){
-            query.$and[{menu_price:{$gt:lcost, $lt:hcost}}]
-        }
-        
-        let output = await getDataSortLimit(collection, query, sort, skip, limit)
-        res.status(200).send(output)
-    }else{
-        res.status(401).send("Unauthorized Access")
-    }
+            restaurant_id: restId,
+            local_government_id: lgaId,
+            state_id: stateId,
+        };
 
- })
+        // Add kitchen filter if provided
+        if (kitchenId) {
+            query["kitchen.kitchen_id"] = kitchenId;
+        }
+
+        // Add price range filter if both hcost and lcost are provided
+        if (hcost && lcost) {
+            query.$and = [
+                { menu_price: { $gt: lcost } },
+                { menu_price: { $lt: hcost } },
+            ];
+        }
+
+        // Retrieve data
+        try {
+            let output = await getDataSortLimit(collection, query, sort, skip, limit);
+            res.status(200).send(output);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            res.status(500).send("Internal Server Error");
+        }
+    } else {
+        res.status(401).send("Unauthorized Access");
+    }
+});
+
+
 
 //  restaurants  details 
  app.get("/restDetails/:id", async (req, res) => {

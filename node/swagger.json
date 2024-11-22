@@ -74,8 +74,17 @@
                     {
                         "name":"kitchenId",
                         "in":"query",
-                        "required":true,
+                        "required":false,
                         "description":"The ID of the kitchen type",
+                        "schema":{
+                            "type":"integer"
+                        }
+                    },
+                    {
+                        "name":"mealTypesId",
+                        "in":"query",
+                        "required":false,
+                        "description":"The ID of the mealTypesId",
                         "schema":{
                             "type":"integer"
                         }
@@ -107,6 +116,7 @@
                 }
             }
         },
+        
         "/mealType":{
             "summary":"Testing mealType Check Route",
             "get":{
@@ -394,5 +404,38 @@
                 }
             }
         }
-    }
-}
+    },
+    "components": {
+            "schemas": {
+            "Restaurant": {
+                "type": "object",
+                "properties": {
+                "restaurant_id": {
+                    "type": "integer",
+                    "description": "The unique ID of the restaurant."
+                },
+                "restaurant_name": {
+                    "type": "string",
+                    "description": "The name of the restaurant."
+                },
+                "restaurant_address": {
+                    "type": "string",
+                    "description": "The address of the restaurant."
+                },
+                "stateId": {
+                    "type": "integer",
+                    "description": "The ID of the state the restaurant is located in."
+                },
+                "lgaId": {
+                    "type": "integer",
+                    "description": "The ID of the local government area."
+                },
+                "kitchenId": {
+                    "type": "integer",
+                    "description": "The ID of the kitchen type."
+                }
+                }
+            }
+            }
+        }
+        }
