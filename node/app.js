@@ -138,53 +138,40 @@ app.get("/menu/:restId/:lgaId/:stateId", async (req, res) => {
     let lcost = Number(req.query.lcost);
     let sort = { menu_price: 1 };
     let skip = 0;
-    let limit = Number.MAX_SAFE_INTEGER; // Use a realistic high value for limit
+    let limit = Number.MAX_SAFE_INTEGER; // Use a reasonable maximum limit
     let authKey = req.headers["x-auth-token"];
 
     if (authKey === key) {
-        // Apply sorting if provided
         if (req.query.sort) {
-            sort = { menu_price: Number(req.query.sort) };
+            sort = { menu_price: req.query.sort };
         }
-
-        // Apply pagination if skip and limit are provided
         if (req.query.skip && req.query.limit) {
             skip = Number(req.query.skip);
             limit = Number(req.query.limit);
         }
 
-        // Base query using the three parameters
+        // Build query with all three parameters
         query = {
-            restaurant_id: restId,
-            local_government_id: lgaId,
-            state_id: stateId,
+            "restaurant_id": restId,
+            "local_government_id": lgaId,
+            "state_id": stateId
         };
 
-        // Add kitchen filter if provided
+        // Menus with respect to restaurants + kitchen
         if (kitchenId) {
             query["kitchen.kitchen_id"] = kitchenId;
+        } else if (hcost && lcost) {
+            query.$and = [{ menu_price: { $gt: lcost, $lt: hcost } }]; // Correctly assign $and as an array
         }
 
-        // Add price range filter if both hcost and lcost are provided
-        if (hcost && lcost) {
-            query.$and = [
-                { menu_price: { $gt: lcost } },
-                { menu_price: { $lt: hcost } },
-            ];
-        }
-
-        // Retrieve data
-        try {
-            let output = await getDataSortLimit(collection, query, sort, skip, limit);
-            res.status(200).send(output);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            res.status(500).send("Internal Server Error");
-        }
+        // Fetch data with sorting and pagination
+        let output = await getDataSortLimit(collection, query, sort, skip, limit);
+        res.status(200).send(output);
     } else {
         res.status(401).send("Unauthorized Access");
     }
 });
+
 
 
 

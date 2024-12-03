@@ -58,7 +58,7 @@ http://localhost:1313/menu/1?skip=3&limit=3
 # menus with respect to restaurants + lgaId + stateId + cost (GET)
 * http://localhost:1313/menu/4/3/2?hcost=2000&lcost=50&sort=1
 * https://netflixapi-7fvc.onrender.com/api-doc
-* [get menus wrt rest + cost route](https://naya-api-1.onrender.com/menu/4/3/2?hcost=2000&lcost=50&sort=1)
+* [get menus wrt rest + cost route](https://naya-api-1.onrender.com/menu/4/3/2?hcost=5100&lcost=600)
 
 # menus with respect to restaurants + kitchen (GET)
 * http://localhost:1313/menu/1?kitchenId=2
